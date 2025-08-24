@@ -2,10 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Visor de Dashboard Ajustado</title>
+  <title>Visor de Dashboard con Offset</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* El body centrará nuestro contenedor */
     body {
       margin: 0;
       padding: 0;
@@ -13,23 +12,22 @@
       justify-content: center;
     }
     
-    /* Este contenedor actúa como la "ventana" que recorta el contenido */
+    /* Este contenedor es la "ventana" a través de la cual miramos */
     .iframe-container {
-      /* Ancho final que se verá en la página (ideal para móviles) */
-      width: 390px;
-      /* Altura generosa para el contenido */
+      width: 390px; /* El ancho final que queremos ver */
       height: 1200px;
-      /* Oculta las partes del iframe que se desplacen fuera de este contenedor */
-      overflow: hidden;
+      overflow: hidden; /* La guillotina que recorta lo que se sale */
     }
 
-    /* El iframe con el contenido del dashboard */
+    /* El iframe ahora es más ancho que su contenedor */
     iframe {
-      width: 100%;
+      /* Ancho = (Ancho visible 390px) + (lo que queremos recortar 50px) */
+      width: 440px; 
       height: 100%;
       border: 0;
+      max-width: none; /* Nos aseguramos de que nada limite este ancho */
       
-      /* ⭐ LA CLAVE: Desplaza el contenido 50px a la izquierda */
+      /* ⭐ Desplazamos el iframe más ancho para ocultar su borde izquierdo */
       transform: translateX(-50px);
     }
   </style>
