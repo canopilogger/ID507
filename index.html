@@ -1,44 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Canopilogger</title>
-    <style>
-        /* Ajuste clave para que el contenido escalado no cree barras de scroll */
-        body {
-            margin: 0;
-            overflow-x: hidden; /* Previene el scroll horizontal */
-        }
-
-        /* --- CONTENEDOR DEL DASHBOARD --- */
-        .dashboard-container {
-            width: 100vw; /* Ocupa el 100% del ancho de la ventana */
-            
-            /* La altura se calcula dinámicamente para que no se corte abajo */
-            /* Alto original (800px) multiplicado por el factor de escala (ancho de la pantalla / ancho original) */
-            height: calc(800px * 100vw / 450px); 
-        }
-
-        /* --- IFRAME DEL DASHBOARD --- */
-        .dashboard-iframe {
-            /* Ancho y alto originales en los que el dashboard se ve bien */
-            width: 450px; 
-            height: 800px; 
-            
-            /* ⭐ La magia del escalado ("zoom") para que quepa en la pantalla */
-            transform-origin: top left; /* El zoom se aplica desde la esquina superior izquierda */
-            transform: scale(calc(100vw / 450px)); /* Calcula el zoom necesario para llenar el ancho */
-
-            border: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Visor de Dashboard Canopilogger</title>
+  
+  <meta name="viewport" content="width=480, initial-scale=1">
+  
+  <style>
+    /* Estilos para asegurar que el iframe ocupe todo el espacio disponible sin márgenes */
+    html, body { 
+        margin: 0; 
+        padding: 0; 
+        height: 100%; 
+        width: 100%; 
+        overflow: hidden; /* Evita barras de scroll no deseadas */
+    }
+    iframe { 
+        width: 100%; 
+        height: 100%; 
+        border: 0; 
+    }
+  </style>
 </head>
 <body>
-
-    <div class="dashboard-container">
-        <iframe class="dashboard-iframe" src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
-    </div>
-
+  <iframe src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
 </body>
 </html>
