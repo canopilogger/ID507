@@ -2,30 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Visor de Dashboard Canopilogger</title>
+  <title>Visor de Dashboard Móvil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    /* Centramos el iframe en la página */
     body { 
         margin: 0; 
-    }
-    .scroll-container {
-        width: 100%;
-        overflow-x: auto; /* Permite el scroll horizontal */
-        -webkit-overflow-scrolling: touch; /* Mejora la experiencia en iOS */
+        padding: 0;
+        display: flex;
+        justify-content: center;
     }
     iframe {
-        width: 550px; /* Ancho fijo que necesita el dashboard */
-        height: 800px;
+        /* ⭐ ANCHO FIJO: Forzamos la vista móvil del dashboard */
+        width: 390px;
+        
+        /* Altura generosa para que quepa todo el contenido vertical */
+        height: 1200px; 
+        
         border: 0;
-        display: block;
     }
   </style>
 </head>
 <body>
-
-  <div class="scroll-container">
-    <iframe src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
-  </div>
-
+  <iframe src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
 </body>
 </html>
