@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Visor de Dashboard con Offset</title>
+  <title>Visor de Dashboard Ancho</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -12,19 +12,22 @@
       justify-content: center;
     }
     
+    /* LA VENTANA: ahora es más ancha */
     .iframe-container {
       width: 480px; 
       height: 1200px;
       overflow: hidden;
     }
 
+    /* EL CONTENIDO: es más ancho que la ventana para poderlo recortar */
     iframe {
-      width: 405px; /* Ancho visible (390px) + Offset (15px) */
+      /* Ancho = (Ancho visible 480px) + (Offset 15px) */
+      width: 495px; 
       height: 100%;
       border: 0;
       max-width: none;
       
-      /* Punto de partida para el ajuste fino */
+      /* Desplazamos el contenido para ocultar el margen izquierdo */
       transform: translateX(-15px);
     }
   </style>
@@ -32,7 +35,7 @@
 <body>
 
   <div class="iframe-container">
-    <iframe src="https://cloud/milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
+    <iframe src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
   </div>
 
 </body>
