@@ -1,18 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Visor de Dashboard</title>
-  
-  <meta name="viewport" content="width=380, initial-scale=0.8">
-  
-  <style>
-    /* Estilos para que el iframe ocupe el 100% del lienzo */
-    html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
-    iframe { width: 100%; height: 100%; border: 0; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Canopilogger</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* --- CONTENEDOR DEL DASHBOARD --- */
+        .dashboard-container {
+            /* Para computadoras, tendrá un ancho máximo y estará centrado */
+            max-width: 450px;
+            margin: 2rem auto; /* Centra el contenedor y le da espacio */
+            
+            /* ⭐ ESTA ES LA CLAVE: Permite el desplazamiento horizontal en móviles */
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en iOS */
+            
+            /* Estilos opcionales para que se vea mejor */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        /* --- IFRAME DEL DASHBOARD --- */
+        .dashboard-iframe {
+            /* Ancho fijo donde el contenido del dashboard se ve bien */
+            width: 450px; 
+            /* Altura fija para que se vea todo el contenido vertical */
+            height: 800px; 
+            
+            /* Estilos para limpiar la apariencia */
+            border: 0;
+            display: block; /* Elimina un pequeño espacio fantasma debajo */
+        }
+    </style>
 </head>
 <body>
-  <iframe src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
+
+    <h1>Monitor de Agrometeorología</h1>
+
+    <div class="dashboard-container">
+        <iframe class="dashboard-iframe" src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
+    </div>
+
+    <p style="color: #555;">En dispositivos móviles, puedes deslizar el dashboard hacia los lados.</p>
+
 </body>
 </html>
