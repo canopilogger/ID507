@@ -12,23 +12,21 @@
       justify-content: center;
     }
     
-    /* Este contenedor es la "ventana" a través de la cual miramos */
     .iframe-container {
-      width: 390px; /* El ancho final que queremos ver */
+      width: 390px; 
       height: 1200px;
-      overflow: hidden; /* La guillotina que recorta lo que se sale */
+      overflow: hidden;
     }
 
-    /* El iframe ahora es más ancho que su contenedor */
     iframe {
-      /* Ancho = (Ancho visible 390px) + (lo que queremos recortar 30px) */
-      width: 420px; 
+      /* Ancho = (Ancho visible 390px) + (offset 15px) */
+      width: 405px; 
       height: 100%;
       border: 0;
-      max-width: none; /* Nos aseguramos de que nada limite este ancho */
+      max-width: none;
       
-      /* ⭐ Desplazamos el iframe para ocultar su borde izquierdo */
-      transform: translateX(-30px);
+      /* ⭐ Nuevo offset reducido */
+      transform: translateX(-15px);
     }
   </style>
 </head>
