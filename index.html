@@ -2,29 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>PÁGINA DE PRUEBA</title>
-  <meta name="viewport" content="width=600, initial-scale=1">
+  <title>Visor de Dashboard Canopilogger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* ESTILO DE PRUEBA: Fondo rojo brillante para ser muy obvio */
     body { 
         margin: 0; 
-        padding: 0; 
-        height: 100vh; 
-        width: 100vw; 
-        overflow: hidden;
-        background-color: #FF0000; /* Fondo rojo */
-        color: white;
-        text-align: center;
     }
-    h1 {
-        padding-top: 40px;
-        font-size: 3em;
+    .scroll-container {
+        width: 100%;
+        overflow-x: auto; /* Permite el scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Mejora la experiencia en iOS */
+    }
+    iframe {
+        width: 550px; /* Ancho fijo que necesita el dashboard */
+        height: 800px;
+        border: 0;
+        display: block;
     }
   </style>
 </head>
 <body>
-  
-  <h1>VERSIÓN DE PRUEBA</h1>
 
-  </body>
+  <div class="scroll-container">
+    <iframe src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
+  </div>
+
+</body>
 </html>
