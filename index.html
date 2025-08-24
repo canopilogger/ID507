@@ -5,57 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Canopilogger</title>
     <style>
+        /* Ajuste clave para que el contenido escalado no cree barras de scroll */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 1rem;
-            text-align: center;
-            background-color: #f4f4f9;
-        }
-
-        h1 {
-            color: #333;
+            overflow-x: hidden; /* Previene el scroll horizontal */
         }
 
         /* --- CONTENEDOR DEL DASHBOARD --- */
         .dashboard-container {
-            /* Para computadoras, tendrá un ancho máximo y estará centrado */
-            max-width: 450px;
-            margin: 2rem auto; /* Centra el contenedor y le da espacio */
+            width: 100vw; /* Ocupa el 100% del ancho de la ventana */
             
-            /* ⭐ ESTA ES LA CLAVE: Permite el desplazamiento horizontal en móviles */
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en iOS */
-            
-            /* Estilos opcionales para que se vea mejor */
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+            /* La altura se calcula dinámicamente para que no se corte abajo */
+            /* Alto original (800px) multiplicado por el factor de escala (ancho de la pantalla / ancho original) */
+            height: calc(800px * 100vw / 450px); 
         }
 
         /* --- IFRAME DEL DASHBOARD --- */
         .dashboard-iframe {
-            /* Ancho fijo donde el contenido del dashboard se ve bien */
+            /* Ancho y alto originales en los que el dashboard se ve bien */
             width: 450px; 
-            /* Altura fija para que se vea todo el contenido vertical */
             height: 800px; 
             
-            /* Estilos para limpiar la apariencia */
+            /* ⭐ La magia del escalado ("zoom") para que quepa en la pantalla */
+            transform-origin: top left; /* El zoom se aplica desde la esquina superior izquierda */
+            transform: scale(calc(100vw / 450px)); /* Calcula el zoom necesario para llenar el ancho */
+
             border: 0;
-            display: block; /* Elimina un pequeño espacio fantasma debajo */
         }
     </style>
 </head>
 <body>
 
-    <h1>Monitor de Agrometeorología</h1>
-
     <div class="dashboard-container">
         <iframe class="dashboard-iframe" src="https://cloud.milesight-iot.com/#/shareDashboard/eu-central-1/d-2f7bde59-8868-4f08-9729-e9b4fc7537ae/910b0145-bddc-4117-a42c-2a41fb31aa67"></iframe>
     </div>
-
-    <p style="color: #555;">En dispositivos móviles, puedes deslizar el dashboard hacia los lados.</p>
 
 </body>
 </html>
